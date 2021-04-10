@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event management company</title>
+</head>
+<body>
+    <h1 onclick="console.log('hi ami')">Exploring Event</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, similique.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button onmouseout="onClick()">Click Me</button>
+    <button id="second">Click Me</button>
+    <button>Click Me</button>
+    <button id="lastParson">Click Me</button>
+
+    <script>
+        function onClick(){
+            console.log('Hey there');
+        }
+
+        function handleClick(){
+            document.body.style.backgroundColor = 'blue';
+        }
+        const secondBtn = document.getElementById('second');
+        secondBtn.addEventListener('click',handleClick);
+       document.getElementById('lastParson').addEventListener('click',function(){
+           document.body.style.color = 'gray';
+       })
+    </script>
+</body>
+</html>

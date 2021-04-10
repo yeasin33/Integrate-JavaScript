@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring DOM</title>
+    <style>
+        article{
+            border: 2px solid greenyellow;
+            border-radius: 30px;
+            margin: 5px;
+            padding: 10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Exploring DOM</h2>
+            <article id="fast-article">
+                <h3 class="special-1">article - 1</h3>
+                <p class="author">author-1</p>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, id beatae doloremque sequi animi ut saepe cupiditate nihil hic adipisci facilis, at, sit totam iusto.</p>
+            </article>
+            <article>
+                <h3 class="special">article - 2</h3>
+                <p class="author">author-2</p>
+                <p class="description">Labore accusantium quasi quas id dolorem, ea fugit temporibus distinctio iure veniam optio ducimus unde? Odio voluptates magnam eum vero laboriosam temporibus? Non, atque doloribus!</p>
+            </article>
+            <article>
+                <h3 class="special">article - 3</h3>
+                <p class="author">author-3</p>
+                <p class="description">Fuga, porro? Quisquam veritatis quidem consequatur sed. Exercitationem ipsam, ipsum voluptatum modi sint itaque adipisci assumenda natus commodi amet expedita odit fugiat hic sit explicabo.</p>
+            </article>
+            <article>
+                <h2>Grocery LIst </h2>
+                <ul id="gift-list">
+                    <li>list-1</li>
+                    <li>list-2</li>
+                    <li>list-3</li>
+                    <li>list-4</li>
+                    <li>list-5</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+   
+
+    <script>
+    //   var author = document.getElementsByClassName('author');
+    //   for (let i = 0; i < author.length; i++) {
+    //       const element = author[i];
+    //       element.style.backgroundColor = 'green';
+    //       element.style.fontSize ='34px';
+    //       element.style.padding = '7px';
+    //       element.style.color = 'gray';
+    //     //   console.log(element.innerHTML);
+    //       element.innerHTML = 'lekhokEiasin-'+ i;
+    //   }
+    document.body.style.backgroundColor = 'tomato';
+    var checkSpecial = document.querySelectorAll('.special-1');
+    for (let i = 0; i < checkSpecial.length; i++) {
+        const element = checkSpecial[i];
+        element.setAttribute('title','Hi i am arafat');
+        element.style.backgroundColor = 'green';
+        element.style.color = 'blue';
+        
+    }
+// add new element 
+    const article = document.getElementById('fast-article');
+    let newParagraph = document.createElement('p');
+    newParagraph.innerHTML = 'hi am form bangladesh'
+    article.appendChild(newParagraph);
+
+    // add more than list item
+
+    const ul = document.getElementById('gift-list');
+    const li = document.createElement('li');
+    li.innerHTML = 'Brand new gift';
+    ul.appendChild(li);
+    </script>
+</body>
+</html>

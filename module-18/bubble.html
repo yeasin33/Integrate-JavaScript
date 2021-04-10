@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Bubble</title>
+</head>
+<body>
+    <div id="container">
+        <h1>My List</h1>
+        <ul id="my-list">
+            <li id="fastItem" class="list-item">Lorem ipsum dolor sit amet.</li>
+            <li class="list-item">Ab quam iure explicabo similique!</li>
+            <li class="list-item">Itaque iure maiores iste numquam.</li>
+            <li class="list-item">Iusto dolorum impedit temporibus aperiam.</li>
+            <li class="list-item">Omnis maiores maxime hic facere.</li>
+        </ul>
+    </div>
+    <button id="addNew">Click Here</button>
+
+    <h1>You have don't click any button</h1>
+    <button class="myButton">Click Me</button>  
+    <button class="myButton">Click Me</button>  
+    <button class="myButton">Click Me</button>
+    <script>
+
+    //    var items = document.getElementsByTagName('li');
+    //    for (let i = 0; i < items.length; i++) {
+    //       var  item = items[i];
+    //        item.addEventListener('click',function(event){
+    //             event.target.parentNode.removeChild(event.target);
+                
+    //        })
+    //    }
+       document.getElementById('addNew').addEventListener('click',function(event){
+           var parentItem = document.getElementById('my-list')
+           var newItem = document.createElement('li')
+            newItem.innerText = 'add New item'
+            parentItem.appendChild(newItem);
+        })
+       
+
+    
+        // document.getElementById('fastItem').addEventListener('click',function(){
+        //     console.log('Haw Are You');
+            
+        // })
+
+        document.getElementById('my-list').addEventListener('click',function(event){
+            event.target.parentNode.removeChild(event.target);
+            
+        })
+        // document.getElementById('my-list').addEventListener('click',function(){
+        //     console.log('clicked ul');
+        // })
+
+        // Multiple case use EventListener
+        let all = document.querySelectorAll('.myButton').length;
+
+    for(var i = 0; i<all; i++){
+        document.querySelectorAll('.myButton')[i].addEventListener('click',function(){
+            var test = this.innerHTML;
+            
+            document.querySelectorAll('h1')[1].innerText = test  + "" + 'is called';
+        })
+    }
+        
+        
+    </script>
+</body>
+</html>
